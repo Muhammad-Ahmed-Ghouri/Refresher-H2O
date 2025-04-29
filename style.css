@@ -14,6 +14,8 @@ body {
 :root {
   --primary1-color: rgb(33, 62, 121);
   --primary2-color: #052846;
+  --primary3-color: #002d53;
+  --primary4-color:#8cbcf7;
   --secondary1-color: #54595f;
   --secondary2-color: rgb(51 51 51);
   --secondary3-color: rgb(144, 144, 144);
@@ -21,6 +23,7 @@ body {
   --secondary5-color: rgba(0, 0, 0, 0.1);
   --secondary6-color: rgb(36, 36, 36);
   --secondary7-color: rgb(203, 199, 199);
+  --secondary8-color: rgba(0, 0, 0, 0.4);
   --white-color: rgb(255, 255, 255);
 }
 
@@ -36,7 +39,7 @@ body {
 
 .card-section {
   margin-top: 40px;
-  background-color: var(--primary2-color) ;
+  background-color: var(--primary3-color) ;
 }
 
 .cards {
@@ -50,11 +53,12 @@ body {
 .card {
   height: fit-content;
   margin: 10px 5px;
+  transition: all 0.3s;
 }
 
 .card-section1 {
   position: relative;
-  transition: all 1s;
+  transition: all 0.3s;
   overflow: hidden;
 }
 
@@ -65,9 +69,36 @@ body {
   transition: all 1s;
 }
 
-.card-section1-image img:hover {
-  transform: scale(1.25);
+.card-section1-hover-option{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary8-color);
+  visibility: hidden;
+  transition: all 0.3s;
 }
+
+.card-section1:hover .card-section1-hover-option {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card-section1-hover-button{
+  border: none;
+  padding: 15px 50px;
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--primary2-color);
+}
+
 
 /* .card-section1:hover .card-section1-hover-options {
   opacity: 1;
@@ -244,8 +275,9 @@ body {
     margin: 10px 0;
   }
 
-  .card-section1-image img:hover {
-    transform: scale(1);
+  .card-section1-hover-button{
+    padding: 10px 20px;
+    font-size: 15px;
   }
 
   .card-section2 {
@@ -264,11 +296,6 @@ body {
   .card-section2-content2-puraspring {
     font-size: 11.97px;
     line-height: 17px;
-  }
-
-
-  .card-section1-image img:hover {
-    transform: scale(1);
   }
 
   /* .card-section1-hover-options {
@@ -336,13 +363,14 @@ body {
     margin: 10px 0;
   }
 
-  .card-section1-image img:hover {
-    transform: scale(1);
-  }
-
   .card-section2 {
     padding: 5px 10px 10px 10px;
     height: 90px;
+  }
+
+  .card-section1-hover-button{
+    padding: 12px 30px;
+    font-size: 17px;
   }
 
   /* .card-section1-hover-options {
@@ -396,8 +424,9 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 
-  .card-section1-image img:hover {
-    transform: scale(1);
+  .card-section1-hover-button{
+    padding: 12px 30px;
+    font-size: 17px;
   }
 
   /* .card-section1-hover-options {
@@ -432,4 +461,9 @@ body {
   }
 }
 
-/* @media screen and (min-width: 1201px) and (max-width: 1536px){} */
+@media screen and (min-width: 1201px) and (max-width: 1536px){
+  .card-section1-hover-button{
+    padding: 12px 30px;
+    font-size: 17px;
+  }
+}
