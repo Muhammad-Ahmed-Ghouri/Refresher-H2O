@@ -69,7 +69,7 @@ body {
   transform: scale(1.25);
 }
 
-.card-section1:hover .card-section1-hover-options {
+/* .card-section1:hover .card-section1-hover-options {
   opacity: 1;
   visibility: visible;
   right: 11px;
@@ -88,8 +88,24 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+} */
+
+/* .card-section1-hover-option1,
+.card-section1-hover-option2,
+.card-section1-hover-option3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 33.33%;
+  width: 100%;
 }
 
+.card-section1-hover-option1 img,
+.card-section1-hover-option2 img,
+.card-section1-hover-option3 img {
+  height: 19px;
+} */
+ 
 .card-section1-sold-tag {
   display: flex;
   justify-content: center;
@@ -111,21 +127,6 @@ body {
   font-weight: 600;
 }
 
-.card-section1-hover-option1,
-.card-section1-hover-option2,
-.card-section1-hover-option3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 33.33%;
-  width: 100%;
-}
-
-.card-section1-hover-option1 img,
-.card-section1-hover-option2 img,
-.card-section1-hover-option3 img {
-  height: 19px;
-}
 
 .card-section2 {
   display: flex;
@@ -270,7 +271,7 @@ body {
     transform: scale(1);
   }
 
-  .card-section1-hover-options {
+  /* .card-section1-hover-options {
     justify-content: space-around;
     top: 7px;
     right: 7px;
@@ -288,7 +289,7 @@ body {
 
   .card-section1-hover-option2 {
     display: none;
-  }
+  } */
 
   .card-section1-hover-option1 img,
   .card-section1-hover-option3 img {
@@ -344,7 +345,7 @@ body {
     height: 90px;
   }
 
-  .card-section1-hover-options {
+  /* .card-section1-hover-options {
     justify-content: space-around;
     top: 10px;
     right: 10px;
@@ -367,7 +368,7 @@ body {
   .card-section1-hover-option1 img,
   .card-section1-hover-option3 img {
     height: 16px;
-  }
+  } */
 
   /* Cart page */
 
@@ -399,7 +400,7 @@ body {
     transform: scale(1);
   }
 
-  .card-section1-hover-options {
+  /* .card-section1-hover-options {
     justify-content: space-around;
     top: 7px;
     right: 7px;
@@ -422,7 +423,7 @@ body {
   .card-section1-hover-option1 img,
   .card-section1-hover-option3 img {
     height: 16px;
-  }
+  } */
 
   /* Cart page */
 
