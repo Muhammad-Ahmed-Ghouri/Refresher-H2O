@@ -27,6 +27,81 @@ body {
   --white-color: rgb(255, 255, 255);
 }
 
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,body{
+  height: 100%;
+  width: 100%;
+}
+
+.no-scroll{
+  overflow: hidden;
+  height: 100%;
+}
+
+#loader-box::before{
+  background: url(/loader-background-image.jpg)no-repeat center center/cover;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  opacity: 0.5;
+}
+
+#loader-box{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 1s ease; 
+  pointer-events: auto;
+  background-color: var(--white-color );
+  z-index: 3;
+}
+
+#loader-box.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-content{
+  color: #0E2165;
+  font-size: 80px;
+  font-family: sans-serif;
+  position: relative;
+  z-index: 5;
+}
+
+.loader-content img{
+  position: absolute;
+  top: -30px;
+  font-size: 40px;
+  animation: showLoading 3s infinite ease-in-out;
+}
+
+@keyframes showLoading {
+  0%{
+      left: 0;
+  }
+  50%{
+      left: 870px;
+  }
+  100%{
+     left: 0;
+  }
+}
+
 .navbar-content {
   display: flex;
   justify-content: center;
