@@ -15,7 +15,7 @@ body {
   --primary1-color: rgb(33, 62, 121);
   --primary2-color: #052846;
   --primary3-color: #002d53;
-  --primary4-color:#8cbcf7;
+  --primary4-color: #8cbcf7;
   --secondary1-color: #54595f;
   --secondary2-color: rgb(51 51 51);
   --secondary3-color: rgb(144, 144, 144);
@@ -24,27 +24,29 @@ body {
   --secondary6-color: rgb(36, 36, 36);
   --secondary7-color: rgb(203, 199, 199);
   --secondary8-color: rgba(0, 0, 0, 0.4);
+  --secondary9-color: #d7d7d5;
   --white-color: rgb(255, 255, 255);
 }
 
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html,body{
+html,
+body {
   height: 100%;
   width: 100%;
 }
 
-.no-scroll{
+.no-scroll {
   overflow: hidden;
   height: 100%;
 }
 
-#loader-box::before{
-  background: url(/loader-background-image.jpg)no-repeat center center/cover;
+#loader-box::before {
+  background: url(/loader-background-image.jpg) no-repeat center center/cover;
   content: "";
   position: absolute;
   top: 0;
@@ -55,18 +57,18 @@ html,body{
   opacity: 0.5;
 }
 
-#loader-box{
+#loader-box {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   object-fit: cover;
   opacity: 1;
-  transition: opacity 1s ease; 
+  transition: opacity 1s ease;
   pointer-events: auto;
-  background-color: var(--white-color );
+  background-color: var(--white-color);
   z-index: 3;
 }
 
@@ -75,15 +77,15 @@ html,body{
   pointer-events: none;
 }
 
-.loader-content{
-  color: #0E2165;
+.loader-content {
+  color: #0e2165;
   font-size: 80px;
   font-family: sans-serif;
   position: relative;
   z-index: 5;
 }
 
-.loader-content img{
+.loader-content img {
   position: absolute;
   top: -30px;
   font-size: 40px;
@@ -91,18 +93,18 @@ html,body{
 }
 
 @keyframes showLoading {
-  0%{
-      left: 0;
+  0% {
+    left: 0;
   }
-  50%{
-      left: 870px;
+  50% {
+    left: 870px;
   }
-  100%{
-     left: 0;
+  100% {
+    left: 0;
   }
 }
 
-.navbar-content {
+/* .navbar-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,11 +112,40 @@ html,body{
   color: rgb(10, 50, 135);
   height: 105px;
   border-bottom: 1px solid #dddddd;
+} */
+
+.main-banner::before {
+  background: url(/home-delivery-banner.jpg)no-repeat center center/cover;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 500px;
+  opacity: 0.8;
+  z-index: -1;
 }
 
-.card-section {
-  margin-top: 40px;
-  background-color: var(--primary3-color) ;
+.main-banner{
+  height: 500px;
+  margin-bottom: 40px;
+  padding: 6% 0 0 18%;
+}
+
+.main-banner-content{
+  max-width: 500px;
+}
+
+.main-banner-content h1{
+  font-size: 45px;
+  color: var(--primary2-color);
+}
+
+.main-banner-content p{
+  color: var(--secondary2-color);
+  font-size: 18px;
+  margin-top: 12px;
 }
 
 .cards {
@@ -129,6 +160,7 @@ html,body{
   height: fit-content;
   margin: 10px 5px;
   transition: all 0.3s;
+  box-shadow: 0 0 10px var(--secondary9-color);
 }
 
 .card-section1 {
@@ -144,7 +176,7 @@ html,body{
   transition: all 1s;
 }
 
-.card-section1-hover-option{
+.card-section1-hover-option {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,7 +195,7 @@ html,body{
   visibility: visible;
 }
 
-.card-section1-hover-button{
+.card-section1-hover-button {
   border: none;
   padding: 15px 50px;
   font-size: 21px;
@@ -173,7 +205,6 @@ html,body{
   border-radius: 4px;
   color: var(--primary2-color);
 }
-
 
 /* .card-section1:hover .card-section1-hover-options {
   opacity: 1;
@@ -211,7 +242,7 @@ html,body{
 .card-section1-hover-option3 img {
   height: 19px;
 } */
- 
+
 .card-section1-sold-tag {
   display: flex;
   justify-content: center;
@@ -232,7 +263,6 @@ html,body{
   font-size: 12px;
   font-weight: 600;
 }
-
 
 .card-section2 {
   display: flex;
@@ -284,7 +314,7 @@ html,body{
 /* Cart page */
 
 .cart-header {
-   background-color: var(--primary2-color) ;
+  background-color: var(--primary2-color);
   height: 160px;
   margin-bottom: 40px;
 }
@@ -340,6 +370,33 @@ html,body{
 }
 
 @media screen and (max-width: 600px) {
+
+  
+  .main-banner::before{
+    background: url(/home-delivery-banner2.jpg)no-repeat center center/cover;
+    opacity: 0.5;
+    height: 300px;
+  }
+
+  .main-banner {
+    height: 300px;
+    padding: 0;
+}
+
+  .main-banner-content {
+    margin: auto;
+    text-align: center;
+    padding: 13% 15%;
+}
+
+.main-banner-content h1 {
+  font-size: 30px;
+}
+
+.main-banner-content p {
+  font-size: 13px;
+}
+
   .cards {
     padding: 30px 0;
     margin: auto;
@@ -350,7 +407,7 @@ html,body{
     margin: 10px 0;
   }
 
-  .card-section1-hover-button{
+  .card-section1-hover-button {
     padding: 10px 20px;
     font-size: 15px;
   }
@@ -427,6 +484,27 @@ html,body{
 
 @media screen and (min-width: 601px) and (max-width: 900px) {
 
+  .main-banner::before{
+    background: url(/home-delivery-banner2.jpg)no-repeat center center/cover;
+    opacity: 0.5;
+  }
+
+  .main-banner {
+    padding: 0;
+}
+
+  .main-banner-content {
+    max-width: 450px;
+    margin: auto;
+    text-align: center;
+    padding: 13% 2%;
+}
+
+
+.main-banner-content h1 {
+  font-size: 40px;
+}
+
   .cards {
     max-width: 50%;
     padding: 30px 0;
@@ -434,7 +512,7 @@ html,body{
     grid-template-columns: 1fr;
   }
 
-  .card{
+  .card {
     margin: 10px 0;
   }
 
@@ -443,7 +521,7 @@ html,body{
     height: 90px;
   }
 
-  .card-section1-hover-button{
+  .card-section1-hover-button {
     padding: 12px 30px;
     font-size: 17px;
   }
@@ -492,6 +570,14 @@ html,body{
 }
 
 @media screen and (min-width: 901px) and (max-width: 1200px) {
+  .main-banner-content {
+    max-width: 290px;
+}
+
+.main-banner-content h1 {
+  font-size: 40px;
+}
+
   .cards {
     max-width: 70%;
     padding: 30px 0;
@@ -499,7 +585,7 @@ html,body{
     grid-template-columns: 1fr 1fr;
   }
 
-  .card-section1-hover-button{
+  .card-section1-hover-button {
     padding: 12px 30px;
     font-size: 17px;
   }
@@ -536,8 +622,21 @@ html,body{
   }
 }
 
-@media screen and (min-width: 1201px) and (max-width: 1536px){
-  .card-section1-hover-button{
+@media screen and (min-width: 1201px) and (max-width: 1536px) {
+
+  .main-banner {
+    padding: 6% 0 0 18%;
+}
+
+.main-banner-content{
+  max-width: 400px;
+}
+
+.main-banner-content h1 {
+  font-size: 40px;
+}
+
+  .card-section1-hover-button {
     padding: 12px 30px;
     font-size: 17px;
   }
