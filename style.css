@@ -85,25 +85,6 @@ body {
   z-index: 5;
 }
 
-/* .loader-content img {
-  position: absolute;
-  top: -30px;
-  font-size: 40px;
-  animation: showLoading 3s infinite ease-in-out;
-}
-
-@keyframes showLoading {
-  0% {
-    left: 0;
-  }
-  50% {
-    left: 810px;
-  }
-  100% {
-    left: 0;
-  }
-} */
-
 .spin-loader {
   border: 3px solid var(--white-color); 
   border-top: 8px solid var(--primary3-color); 
@@ -119,21 +100,20 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-/* .navbar-content {
+.navbar-content {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
   color: rgb(10, 50, 135);
   height: 105px;
-  border-bottom: 1px solid #dddddd;
-} */
+}
 
 .main-banner::before {
   background: url(/home-delivery-banner.jpg) no-repeat center center/cover;
   content: "";
   position: absolute;
-  top: 0;
+  top: 105px;
   left: 0;
   right: 0;
   width: 100%;
