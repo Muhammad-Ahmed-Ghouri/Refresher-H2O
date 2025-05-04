@@ -159,7 +159,7 @@ body {
 }
 
 .card-section::before{
-  background: url(/romello-williams-P8VMwYFY-Es-unsplash.jpg)no-repeat center center/cover;
+  background: url(/card-section-background-image.jpg)no-repeat center center/cover;
   content: "";
   position: absolute;
   left: 0;
@@ -332,16 +332,8 @@ body {
   height: 100%;
 }
 
-.cart-header-aero {
-  font-size: 30px;
-  font-weight: bold;
-  color: var(--white-color);
-  opacity: 0.7;
-}
-
 .cart-header-content-headings {
   font-size: 24px;
-  font-family: auto;
   font-weight: 400;
   color: var(--white-color);
   text-decoration: none;
@@ -568,12 +560,6 @@ body {
     opacity: 1;
   }
 
-  .cart-header-content-heading2,
-  .cart-header-content-heading3,
-  .cart-header-aero {
-    display: none;
-  }
-
   .footer-box-part1 {
     flex-direction: column;
 }
@@ -709,12 +695,6 @@ body {
   .cart-header-content-heading1 {
     color: var(--white-color);
     opacity: 1;
-  }
-
-  .cart-header-content-heading2,
-  .cart-header-content-heading3,
-  .cart-header-aero {
-    display: none;
   }
 
   .footer-box-part1 {
