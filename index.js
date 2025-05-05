@@ -21,7 +21,6 @@ function quantityCount() {
     let finalAmount = "";
     finalAmount = quantity * unitPrice;
     document.getElementById("total-amount").innerHTML = finalAmount;
-    console.log(finalAmount);
   }
 }
 
