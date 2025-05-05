@@ -8,9 +8,6 @@
 html,
 body {
   height: 100% !important;
-}
-
-p, h1, h6 ,label,a{
   user-select: none;
   cursor: default;
 }
@@ -556,18 +553,14 @@ p, h1, h6 ,label,a{
   .form-content2-box2-button button{
     text-decoration: none;
     border: none;
-    background-color: var(--orange-color);
+    background-color: var(--secondary7-color);
     color: var(--white-color);
     width: 93%;
-    margin: auto;
+    margin: 0 19px;
     padding: 10px;
     font-size: 17px;
     border-radius: 3px;
-    cursor: pointer;
-  }
-
-  .form-content2-box2-button a{
-    padding: 10px 26px;
+    transition: all 0.5s;
   }
 
 @media screen and (max-width: 600px) {
