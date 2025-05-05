@@ -346,14 +346,6 @@ p, h1, h6 ,label,a{
   font-size: 24px;
   font-weight: 400;
   color: var(--white-color);
-  text-decoration: none;
-  opacity: 0.7;
-  transition: all 0.5s;
-}
-
-.cart-header-content-headings:hover {
-  color: var(--white-color);
-  opacity: 1;
 }
 
 .cart-section-parts {
