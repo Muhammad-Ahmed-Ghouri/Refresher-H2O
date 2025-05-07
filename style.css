@@ -8,7 +8,7 @@
 html,
 body {
   height: max-content;
-h}
+}
 
 :root {
   --primary1-color: rgb(33, 62, 121);
@@ -16,6 +16,7 @@ h}
   --primary3-color: #002d53;
   --primary4-color: #8cbcf7;
   --primary5-color: rgb(10, 50, 135);
+  --primary6-color: #6987ac;
   --secondary1-color: #54595f;
   --secondary2-color: rgb(51 51 51);
   --secondary3-color: rgb(144, 144, 144);
@@ -26,7 +27,6 @@ h}
   --secondary8-color: rgba(0, 0, 0, 0.4);
   --secondary9-color: #d7d7d5;
   --white-color: rgb(255, 255, 255);
-  --orange-color: #f16320;
 }
 
 .no-scroll {
@@ -500,7 +500,7 @@ h}
 }
 
 .form-content2-field p,.form-content2-box2-field P{
-  background-color: var(--orange-color);
+  background-color: var(--primary6-color);
   color: var(--white-color);
   width: 100%;
   padding: 10px;
@@ -548,13 +548,17 @@ h}
     outline: none;
   }
 
+  .form-content2-box2-button{
+display: flex;
+justify-content: center;
+  }
+
   .form-content2-box2-button button{
     text-decoration: none;
     border: none;
     background-color: var(--secondary7-color);
     color: var(--white-color);
     width: 93%;
-    margin: 0 19px;
     padding: 10px;
     font-size: 17px;
     border-radius: 3px;
