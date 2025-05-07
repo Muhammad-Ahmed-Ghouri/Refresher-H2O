@@ -713,19 +713,28 @@ justify-content: center;
   }
 
   .footer-box-part2-content1 p {
-    font-size: 23px;
+    font-size: 18px;
     text-align: center;
   }
 
   .footer-box-part2-content1,
   .footer-box-part2-content2,
   .footer-box-part2-content3 {
-    margin: 30px 24px;
+    margin: 20px 5px;
   }
 
   .footer-box-part2-content3 a {
     text-align: center;
   }
+
+  .footer-box-part2-content2 img, .footer-box-part2-content3 img {
+    height: 16px;
+    margin: 0 3px 0 3px;
+}
+
+.footer-box-part2-content2 a, .footer-box-part2-content3 a, .footer-box-part2-content2 p, .footer-box-part2-content3 p {
+  font-size: 15px;
+}
 
       /* Cart page */
     
@@ -882,7 +891,7 @@ justify-content: center;
   .footer-box-part2-content1,
   .footer-box-part2-content2,
   .footer-box-part2-content3 {
-    margin: 30px 0;
+    margin: 25px 0;
   }
 
   .footer-box-part2-content1 img {
