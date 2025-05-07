@@ -35,7 +35,7 @@ body {
 }
 
 #loader-box::before {
-  background: url(/loader-background-image.jpg) no-repeat center center/cover;
+  background: url(./assets/loader-background-image.jpg) no-repeat center center/cover;
   content: "";
   position: absolute;
   top: 0;
@@ -94,7 +94,7 @@ body {
 }
 
 .navbar {
-  background: #f6f4f4;
+  background-color: #f6f4f4;
 }
 
 .navbar-content {
@@ -112,7 +112,7 @@ body {
 }
 
 .main-banner::before {
-  background: url(/home-delivery-banner.jpg) no-repeat center center/cover;
+  background: url(./assets/home-delivery-banner.jpg) no-repeat center center/cover;
   content: "";
   position: absolute;
   top: 80px;
@@ -164,7 +164,7 @@ body {
 }
 
 .card-section::before {
-  background: url(/card-section-background-image.jpg) no-repeat center
+  background: url(./assets/card-section-background-image.jpg) no-repeat center
     center/cover;
   content: "";
   position: absolute;
@@ -587,7 +587,7 @@ justify-content: center;
   }
 
   .main-banner::before {
-    background: url(/home-delivery-banner2.jpg) no-repeat center center/cover;
+    background: url(./assets/home-delivery-banner2.jpg) no-repeat center center/cover;
     opacity: 0.7;
     height: 300px;
   }
@@ -780,7 +780,7 @@ justify-content: center;
   }
 
   .main-banner::before {
-    background: url(/home-delivery-banner2.jpg) no-repeat center center/cover;
+    background: url(./assets/home-delivery-banner2.jpg) no-repeat center center/cover;
     opacity: 0.5;
   }
 
