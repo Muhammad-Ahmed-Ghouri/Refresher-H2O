@@ -5,6 +5,7 @@ window.onload = function () {
 
     setTimeout(() => {
       loader.classList.add("hide");
+
       setTimeout(() => {
         loader.style.display = "none";
         document.body.classList.remove("no-scroll");
@@ -14,38 +15,37 @@ window.onload = function () {
 };
 
 const quantity = document.getElementById("quantity");
-const unitPrice = parseInt(document.getElementById("total-amount").innerHTML);
-function quantityCount() {
-  const quantity = document.getElementById("quantity").value;
-  if (quantity >= 0) {
-    let finalAmount = "";
-    finalAmount = quantity * unitPrice;
-    document.getElementById("total-amount").innerHTML = finalAmount;
-  }
-}
-
-quantity.addEventListener("input", () => {
-  quantityCount();
-});
-
-const submitButton = document.getElementById("submit-btn");
-const arrayOfProductDetails = [
-  {
-    customerName: "",
-    customerAddress: "",
-    customerMobileNo: "",
-  },
-  {
-    productName: "19 Lit",
-    quantity: 1,
-    perUnitPrice: 100,
-  },
-];
-
 const customerName = document.getElementById("name");
 const customerMobileNo = document.getElementById("phone");
 const customerAddress = document.getElementById("address");
+let totalAmount = parseInt(document.getElementById("total-amount").innerHTML);
+const submitButton = document.getElementById("submit-btn");
 
+// initial values
+const initialValues = {
+  customerName,
+  customerAddress,
+  customerMobileNo,
+  items: [
+    {
+      productName: "19 Lit",
+      quantity,
+      perUnitPrice: 100,
+    },
+  ],
+};
+
+// updating initial values
+function formValues() {
+  initialValues.customerName = customerName.value;
+  initialValues.customerAddress = customerAddress.value;
+  initialValues.customerMobileNo = customerMobileNo.value;
+  initialValues.quantity = quantity.value;
+
+  return initialValues;
+}
+
+// validations
 function checkFields() {
   if (
     customerName.value.length >= 3 &&
@@ -54,7 +54,7 @@ function checkFields() {
     quantity.value > 0
   ) {
     submitButton.disabled = false;
-    submitButton.style.backgroundColor = "#f16320";
+    submitButton.style.backgroundColor = "#6987ac";
     submitButton.style.cursor = "pointer";
   } else {
     submitButton.disabled = true;
@@ -62,17 +62,16 @@ function checkFields() {
   }
 }
 
-function arrayOfInformation() {
-  arrayOfProductDetails[0].customerName = customerName.value;
-  arrayOfProductDetails[0].customerAddress = customerAddress.value;
-  arrayOfProductDetails[0].customerMobileNo = customerMobileNo.value;
-  arrayOfProductDetails[1].quantity = quantity.value;
-  console.log(arrayOfProductDetails);
+// quantity calculation
+function quantityCount() {
+  if (quantity.value >= 0) {
+    const finalAmount = quantity.value * totalAmount;
+    document.getElementById("total-amount").innerHTML = finalAmount;
+  }
 }
 
-submitButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  arrayOfInformation();
+quantity.addEventListener("input", () => {
+  quantityCount();
 });
 
 quantity.addEventListener("input", () => {
@@ -89,4 +88,21 @@ customerMobileNo.addEventListener("input", () => {
 
 customerAddress.addEventListener("input", () => {
   checkFields();
+});
+
+async function post(data) {
+  await fetch("http://app.hydrila.com/api/webstoreorders", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+}
+
+submitButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  const res = formValues();
+
+  post(res);
 });
