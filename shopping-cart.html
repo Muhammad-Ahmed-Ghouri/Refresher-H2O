@@ -6,6 +6,10 @@
     <title>Cart - puraspring</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+  />
   <body>
     <nav class="navbar">
       <div class="navbar-content">
@@ -74,7 +78,10 @@
               <p id="total-amount">100</p>
             </div>
             <div class="form-content2-box2-button">
-              <button id="submit-btn" type="submit" disabled>Submit</button>
+              <button id="submit-btn" type="submit" disabled>
+                <div id="order-process"></div>
+                Submit
+              </button>
             </div>
           </div>
         </form>
@@ -112,5 +119,6 @@
     </footer>
 
     <script src="/form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

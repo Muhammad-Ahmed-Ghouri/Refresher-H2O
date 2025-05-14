@@ -554,15 +554,28 @@ justify-content: center;
   }
 
   .form-content2-box2-button button{
+    display: flex;
+justify-content: center;
+padding: 10px;
     text-decoration: none;
     border: none;
     background-color: var(--secondary7-color);
     color: var(--white-color);
     width: 93%;
-    padding: 10px;
     font-size: 17px;
     border-radius: 3px;
     transition: all 0.5s;
+  }
+
+  #order-process{
+    display: none;
+    margin-right: 10px;
+    border: 2px solid var(--primary3-color);
+    border-top: 2px solid var(--white-color);
+    border-radius: 20px;
+    height: 17px;
+    width: 17px;
+    animation: spin 1s linear infinite;
   }
 
 @media screen and (max-width: 600px) {

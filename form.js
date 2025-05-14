@@ -2,8 +2,9 @@ const quantity = document.getElementById("quantity");
 const customerName = document.getElementById("name");
 const customerMobileNo = document.getElementById("phone");
 const customerAddress = document.getElementById("address");
-let totalAmount = parseInt(document.getElementById("total-amount").innerHTML);
 const submitButton = document.getElementById("submit-btn");
+const orderProcess = document.getElementById("order-process");
+let totalAmount = parseInt(document.getElementById("total-amount").innerHTML);
 
 // initial values
 const initialValues = {
@@ -24,7 +25,7 @@ function formValues() {
   initialValues.customerName = customerName.value;
   initialValues.customerAddress = customerAddress.value;
   initialValues.customerMobileNo = customerMobileNo.value;
-  initialValues.quantity = quantity.value;
+  initialValues.items[0].quantity = quantity.value;
 
   return initialValues;
 }
@@ -87,6 +88,20 @@ async function post(data) {
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
   const res = formValues();
-
   post(res);
+
+  orderProcess.style.display = "inline-block";
+
+  setTimeout(() => {
+    orderProcess.style.display = "none";
+    Swal.fire({
+      text: "Hey! Your order has placed successfully.",
+      timer: 2000,
+      showConfirmButton: false,
+    });
+  }, 2000);
+
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 3000);
 });
