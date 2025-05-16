@@ -76,7 +76,7 @@ customerAddress.addEventListener("input", () => {
 });
 
 async function post(data) {
-  await fetch("http://app.hydrila.com/api/webstoreorders", {
+  await fetch("https://app.hydrila.com/api/webstoreorders", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
