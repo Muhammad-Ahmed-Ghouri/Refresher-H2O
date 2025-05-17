@@ -39,7 +39,7 @@ function formValues() {
 function checkFields() {
   if (
     customerName.value.length >= 3 &&
-    customerMobileNo.value.length >= 8 &&
+    customerMobileNo.value.length === 10 &&
     customerAddress.value.length >= 10 &&
     quantity.value > 0
   ) {
