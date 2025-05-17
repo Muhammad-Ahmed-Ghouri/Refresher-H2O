@@ -4,9 +4,13 @@ const customerMobileNo = document.getElementById("phone");
 const customerAddress = document.getElementById("address");
 const submitButton = document.getElementById("submit-btn");
 const orderProcess = document.getElementById("order-process");
+const deliveryChargesMessage = document.getElementById(
+  "delivery-charges-message"
+);
 const urlParameter = new URLSearchParams(window.location.search);
 const getProductName = urlParameter.get("product");
 const getProductPrice = urlParameter.get("price");
+const getDeliveryPrice = urlParameter.get("delivery");
 let productName = document.getElementById("product-name");
 let productPrice = document.getElementById("product-unit-price");
 let totalAmount = document.getElementById("total-amount");
@@ -56,7 +60,12 @@ function checkFields() {
 function quantityCount() {
   if (quantity.value >= 0) {
     const finalAmount = quantity.value * getProductPrice;
-    document.getElementById("total-amount").innerHTML = finalAmount;
+    if (getDeliveryPrice) {
+      document.getElementById("total-amount").innerHTML =
+        finalAmount + parseInt(getDeliveryPrice);
+    } else {
+      document.getElementById("total-amount").innerHTML = finalAmount;
+    }
   }
 }
 
@@ -116,5 +125,11 @@ submitButton.addEventListener("click", (e) => {
 if (productName && productPrice) {
   productName.textContent = getProductName;
   productPrice.textContent = getProductPrice;
-  totalAmount.textContent = getProductPrice;
+  if (getDeliveryPrice) {
+    deliveryChargesMessage.style.display = "block";
+    totalAmount.textContent =
+      parseInt(getProductPrice) + parseInt(getDeliveryPrice);
+  } else {
+    totalAmount.textContent = getProductPrice;
+  }
 }
