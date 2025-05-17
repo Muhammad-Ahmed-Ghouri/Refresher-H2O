@@ -477,7 +477,7 @@ body {
   color: var(--white-color);
   width: 100%;
   padding: 10px;
-  font-size: 17px;
+  font-size: 15px;
   border-radius: 3px;
 }
 
@@ -488,8 +488,12 @@ body {
   color: var(--secondary2-color);
 }
 
-.form-content2-field{
-  width: 45%;
+.form-content2-name-field{
+  width: 50%;
+}
+
+.form-content2-price-field{
+  width: 40%;
 }
 
 .form-content2-box2-field P{

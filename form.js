@@ -4,7 +4,12 @@ const customerMobileNo = document.getElementById("phone");
 const customerAddress = document.getElementById("address");
 const submitButton = document.getElementById("submit-btn");
 const orderProcess = document.getElementById("order-process");
-let totalAmount = parseInt(document.getElementById("total-amount").innerHTML);
+const urlParameter = new URLSearchParams(window.location.search);
+const getProductName = urlParameter.get("product");
+const getProductPrice = urlParameter.get("price");
+let productName = document.getElementById("product-name");
+let productPrice = document.getElementById("product-unit-price");
+let totalAmount = document.getElementById("total-amount");
 
 // initial values
 const initialValues = {
@@ -50,7 +55,7 @@ function checkFields() {
 // quantity calculation
 function quantityCount() {
   if (quantity.value >= 0) {
-    const finalAmount = quantity.value * totalAmount;
+    const finalAmount = quantity.value * getProductPrice;
     document.getElementById("total-amount").innerHTML = finalAmount;
   }
 }
@@ -105,3 +110,11 @@ submitButton.addEventListener("click", (e) => {
     window.location.href = "index.html";
   }, 3000);
 });
+
+// Set product name and product price values
+
+if (productName && productPrice) {
+  productName.textContent = getProductName;
+  productPrice.textContent = getProductPrice;
+  totalAmount.textContent = getProductPrice;
+}
