@@ -227,24 +227,12 @@ body {
 
 .card-section2-content1 {
   color: var(--secondary1-color);
-  text-decoration: none;
   font-size: 14px;
-  transition: all 0.5s;
 }
 
-.card-section2-content1:hover {
-  color: var(--secondary2-color);
-}
-
-.card-section2-content2-bundles {
+.card-section2-content2 {
   font-size: 13.3px;
-  text-decoration: none;
   color: var(--secondary3-color);
-  transition: all 0.5s;
-}
-
-.card-section2-content2-bundles:hover {
-  color: var(--secondary4-color);
 }
 
 .card-section2-content3 {
@@ -500,6 +488,13 @@ body {
   margin: 15px auto;
 }
 
+#delivery-charges-message {
+  display: none;
+  font-size: 12px;
+  color: var(--secondary4-color);
+  margin: 10px 0 0;
+}
+
 .form-content2-input-field input {
   background-color: var(--white-color);
   color: var(--secondary8-color);
@@ -509,11 +504,11 @@ body {
   border-radius: 3px;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 .form-content2-input-phone-field {
   display: flex;
-  justify-content: end;
   background-color: var(--white-color);
   border-radius: 3px;
   align-items: center;
@@ -521,6 +516,7 @@ body {
 
 .form-content2-input-phone-field p {
   color: var(--secondary8-color);
+  padding-left: 10px;
 }
 
 .form-content2-input-phone-field input {
@@ -634,7 +630,7 @@ body {
     line-height: 17px;
   }
 
-  .card-section2-content2-bundles {
+  .card-section2-content2 {
     font-size: 11.97px;
     line-height: 17px;
   }
