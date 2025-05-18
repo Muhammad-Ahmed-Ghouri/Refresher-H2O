@@ -152,13 +152,26 @@ customerMobileNo.addEventListener("input", function () {
 // Post data to server
 
 async function post(data) {
-  await fetch("https://app.hydrila.com/api/webstoreorders", {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  });
+  try {
+    const response = await fetch("https://app.hydrila.com/api/webstoreorders", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error("Fetch error:", error);
+    throw error;
+  }
 }
 
 // Submit event
@@ -179,7 +192,7 @@ submitButton.addEventListener("click", (e) => {
     });
   }, 2000);
 
-  // setTimeout(() => {
-  //   window.location.href = "index.html";
-  // }, 3000);
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 3000);
 });
