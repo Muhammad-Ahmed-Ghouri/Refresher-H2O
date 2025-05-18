@@ -1,4 +1,4 @@
-const products = [
+const productsList = [
   {
     id: 1,
     product: "Rh20 1.5 Liter pet (pack of 6)",
@@ -38,7 +38,7 @@ const products = [
 
 const container = document.getElementById("product-container");
 
-products.forEach((item) => {
+productsList.forEach((item) => {
   const card = document.createElement("div");
   card.classList.add("card", `card${item.id}`);
 
