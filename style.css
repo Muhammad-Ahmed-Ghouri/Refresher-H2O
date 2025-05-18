@@ -324,17 +324,6 @@ body {
   height: 400px;
 }
 
-.company-certificates-thrice-box {
-  background-color: var(--white-color);
-  width: 1214.41px;
-  display: flex;
-  justify-content: center;
-}
-
-.company-certificates-thrice {
-  height: 400px;
-}
-
 .footer-box-part2 {
   display: flex;
   justify-content: space-around;
@@ -691,10 +680,6 @@ body {
     margin: auto;
   }
 
-  .company-certificates-thrice-box {
-    width: 278px;
-  }
-
   .company-certificates-thrice {
     height: 200px;
   }
@@ -853,14 +838,6 @@ body {
     margin: auto;
   }
 
-  .company-certificates-thrice-box {
-    width: 435px;
-  }
-
-  .company-certificates-thrice {
-    height: 270px;
-  }
-
   .footer-box-part2 {
     flex-direction: column;
     max-width: 900px;
@@ -953,14 +930,6 @@ body {
     height: 273px;
   }
 
-  .company-certificates-thrice-box {
-    width: 828.838px;
-  }
-
-  .company-certificates-thrice {
-    height: 290px;
-  }
-
   .footer-box-part2 {
     justify-content: space-between;
     max-width: 860px;
@@ -1032,14 +1001,6 @@ body {
 
   .company-certificates {
     height: 380px;
-  }
-
-  .company-certificates-thrice {
-    height: 380px;
-  }
-
-  .company-certificates-thrice-box {
-    width: 1153.7px;
   }
 
   .footer-box-part2-content1 img {
