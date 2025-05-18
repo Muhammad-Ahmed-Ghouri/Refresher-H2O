@@ -484,6 +484,11 @@ body {
   margin: 10px 0 0;
 }
 
+.account-login-message{
+    font-size: 12px;
+  color: var(--secondary4-color);
+}
+
 .form-content2-input-field input {
   background-color: var(--white-color);
   color: var(--secondary8-color);
@@ -534,6 +539,28 @@ body {
   background-color: var(--secondary7-color);
   color: var(--white-color);
   width: 93%;
+  font-size: 17px;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.form-content2-box2-login-button {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 93%;
+  margin: 0 auto;
+}
+
+.form-content2-box2-login-button a {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 15px 0;
+  text-decoration: none;
+  border: none;
+  background-color: rgb(105, 135, 172);
+  color: var(--white-color);
   font-size: 17px;
   border-radius: 3px;
   transition: all 0.5s;
