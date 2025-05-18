@@ -7,39 +7,101 @@ const orderProcess = document.getElementById("order-process");
 const deliveryChargesMessage = document.getElementById(
   "delivery-charges-message"
 );
-const urlParameter = new URLSearchParams(window.location.search);
-const getProductName = urlParameter.get("product");
-const getProductPrice = urlParameter.get("price");
-const getDeliveryPrice = urlParameter.get("delivery");
+const totalAmount = document.getElementById("total-amount");
+const urlParams = new URLSearchParams(window.location.search);
+const productId = parseInt(urlParams.get("id")); // Get product ID from URL
 let productName = document.getElementById("product-name");
 let productPrice = document.getElementById("product-unit-price");
-let totalAmount = document.getElementById("total-amount");
 
-// initial values
-const initialValues = {
-  customerName,
-  customerAddress,
-  customerMobileNo,
+// Product array
+const products = [
+  {
+    id: 1,
+    product: "Rh20 1.5 Liter pet (pack of 6)",
+    price: 320,
+    image: "./assets/card1-image.jpeg",
+    deliveryCharges: 0,
+  },
+  {
+    id: 2,
+    product: "Rh20 500 ml pet (pack of 12)",
+    price: 320,
+    image: "./assets/card2-image.jpeg",
+    deliveryCharges: 0,
+  },
+  {
+    id: 3,
+    product: "Classic purified(19 Liters)",
+    price: 80,
+    image: "./assets/card-image.png",
+    deliveryCharges: 30,
+  },
+  {
+    id: 4,
+    product: "Premium Mineral Boosted(19 Liters)",
+    price: 100,
+    image: "./assets/card-image.png",
+    deliveryCharges: 30,
+  },
+  {
+    id: 5,
+    product: "Ozonated Mineral Boosted(19 Liters)",
+    price: 120,
+    image: "./assets/card-image.png",
+    deliveryCharges: 30,
+  },
+];
+
+// Find the selected product based on the product ID from URL
+const selectedProduct = products.find((p) => p.id === productId);
+
+// Declare the initial values object
+let initialValues = {
+  customerName: "",
+  customerAddress: "",
+  customerMobileNo: "",
   items: [
     {
-      productName: "19 Lit",
-      quantity,
-      perUnitPrice: 100,
+      productName: "",
+      quantity: 0,
+      perUnitPrice: 0,
     },
   ],
 };
 
-// updating initial values
-function formValues() {
-  initialValues.customerName = customerName.value;
-  initialValues.customerAddress = customerAddress.value;
-  initialValues.customerMobileNo = customerMobileNo.value;
-  initialValues.items[0].quantity = quantity.value;
+// If selected product exists, update product details
+if (selectedProduct) {
+  productName.textContent = selectedProduct.product;
+  productPrice.textContent = selectedProduct.price;
 
-  return initialValues;
+  if (selectedProduct.deliveryCharges) {
+    deliveryChargesMessage.style.display = "block";
+  }
+
+  initialValues.items[0].productName = selectedProduct.product;
+  initialValues.items[0].perUnitPrice = selectedProduct.price;
+
+  // Set initial total amount
+  updateTotalAmount(selectedProduct.price, selectedProduct.deliveryCharges);
+} else {
+  console.error("Product not found");
 }
 
-// validations
+// Updating the total amount
+
+function updateTotalAmount(price, deliveryCharges) {
+  const quantityValue = parseInt(quantity.value);
+  if (deliveryCharges > 0) {
+    const total = quantityValue * price + deliveryCharges;
+    totalAmount.textContent = total;
+  } else {
+    const total = quantityValue * price;
+    totalAmount.textContent = total;
+  }
+}
+
+// Form field validation
+
 function checkFields() {
   if (
     customerName.value.length >= 3 &&
@@ -56,38 +118,38 @@ function checkFields() {
   }
 }
 
-// quantity calculation
-function quantityCount() {
-  if (quantity.value >= 0) {
-    const finalAmount = quantity.value * getProductPrice;
-    if (getDeliveryPrice) {
-      document.getElementById("total-amount").innerHTML =
-        finalAmount + parseInt(getDeliveryPrice);
-    } else {
-      document.getElementById("total-amount").innerHTML = finalAmount;
-    }
-  }
+// Updating initial values
+
+function formValues() {
+  initialValues.customerName = customerName.value;
+  initialValues.customerAddress = customerAddress.value;
+  initialValues.customerMobileNo = customerMobileNo.value;
+  initialValues.items[0].quantity = parseInt(quantity.value) || 0;
+  return initialValues;
 }
 
 quantity.addEventListener("input", () => {
-  quantityCount();
-});
-
-quantity.addEventListener("input", () => {
+  if (selectedProduct) {
+    updateTotalAmount(selectedProduct.price, selectedProduct.deliveryCharges);
+  }
   checkFields();
 });
 
-customerName.addEventListener("input", () => {
+customerName.addEventListener("input", checkFields);
+customerMobileNo.addEventListener("input", checkFields);
+customerAddress.addEventListener("input", checkFields);
+
+// Phone number formatting
+
+customerMobileNo.addEventListener("input", function () {
+  this.value = this.value.replace(/\D/g, "");
+  if (this.value.length > 10) {
+    this.value = this.value.slice(0, 10);
+  }
   checkFields();
 });
 
-customerMobileNo.addEventListener("input", () => {
-  checkFields();
-});
-
-customerAddress.addEventListener("input", () => {
-  checkFields();
-});
+// Post data to server
 
 async function post(data) {
   await fetch("https://app.hydrila.com/api/webstoreorders", {
@@ -99,17 +161,19 @@ async function post(data) {
   });
 }
 
+// Submit event
+
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
-  const res = formValues();
-  post(res);
+  const formData = formValues();
+  post(formData);
 
   orderProcess.style.display = "inline-block";
 
   setTimeout(() => {
     orderProcess.style.display = "none";
     Swal.fire({
-      text: "Hey! Your order has placed successfully.",
+      text: "Hey! Your order has been placed successfully.",
       timer: 2000,
       showConfirmButton: false,
     });
@@ -119,17 +183,3 @@ submitButton.addEventListener("click", (e) => {
     window.location.href = "index.html";
   }, 3000);
 });
-
-// Set product name and product price values
-
-if (productName && productPrice) {
-  productName.textContent = getProductName;
-  productPrice.textContent = getProductPrice;
-  if (getDeliveryPrice) {
-    deliveryChargesMessage.style.display = "block";
-    totalAmount.textContent =
-      parseInt(getProductPrice) + parseInt(getDeliveryPrice);
-  } else {
-    totalAmount.textContent = getProductPrice;
-  }
-}
