@@ -123,7 +123,7 @@ function checkFields() {
 function formValues() {
   initialValues.customerName = customerName.value;
   initialValues.customerAddress = customerAddress.value;
-  initialValues.customerMobileNo = customerMobileNo.value;
+  initialValues.customerMobileNo = "+92" + customerMobileNo.value;
   initialValues.items[0].quantity = parseInt(quantity.value) || 0;
   return initialValues;
 }
@@ -179,7 +179,7 @@ submitButton.addEventListener("click", (e) => {
     });
   }, 2000);
 
-  setTimeout(() => {
-    window.location.href = "index.html";
-  }, 3000);
+  // setTimeout(() => {
+  //   window.location.href = "index.html";
+  // }, 3000);
 });
