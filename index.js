@@ -9,5 +9,5 @@ window.onload = function () {
       loader.style.display = "none";
       document.body.classList.remove("no-scroll");
     }, 1000);
-  }, 3000);
+  }, 1000);
 };
