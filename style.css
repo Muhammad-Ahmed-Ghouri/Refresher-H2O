@@ -119,7 +119,7 @@ body {
 
 .cards {
   max-width: 65%;
-  padding: 50px 0;
+  padding: 30px 0;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -147,6 +147,30 @@ body {
   height: 100%;
   opacity: 0.5;
   z-index: -1;
+}
+
+.login-message{
+  padding-top: 15px;
+}
+
+.login-message-content{
+    background-color: #b4cdec;
+    width: 97%;
+    margin: 0 auto;
+    border-radius: 3px;
+    padding: 8px 20px;
+    color: #155a87;
+    font-size: 14px;
+}
+
+.login-message-content a{
+  color: #155a87;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.login-message-content a:hover{
+  color: var(--primary5-color);
 }
 
 .card-section1 {
@@ -618,6 +642,11 @@ body {
   .main-banner-content p {
     font-size: 13px;
   }
+
+  .login-message-content{
+    padding: 5px 10px;
+    font-size: 12px;
+}
 
   .cards {
     padding: 30px 0;
