@@ -149,27 +149,28 @@ body {
   z-index: -1;
 }
 
-.login-message{
+.login-message {
   padding-top: 15px;
 }
 
-.login-message-content{
-    background-color: #b4cdec;
-    width: 97%;
-    margin: 0 auto;
-    border-radius: 3px;
-    padding: 8px 20px;
-    color: #155a87;
-    font-size: 14px;
+.login-message-content {
+  background-color: #b4cdec;
+  width: 97%;
+  margin: 0 auto;
+  border: 1px solid var(--primary4-color);
+  border-radius: 3px;
+  padding: 8px 20px;
+  color: #155a87;
+  font-size: 14px;
 }
 
-.login-message-content a{
+.login-message-content a {
   color: #155a87;
   text-decoration: none;
   transition: all 0.5s;
 }
 
-.login-message-content a:hover{
+.login-message-content a:hover {
   color: var(--primary5-color);
 }
 
@@ -508,8 +509,8 @@ body {
   margin: 10px 0 0;
 }
 
-.account-login-message{
-    font-size: 12px;
+.account-login-message {
+  font-size: 12px;
   color: var(--secondary4-color);
 }
 
@@ -643,10 +644,10 @@ body {
     font-size: 13px;
   }
 
-  .login-message-content{
+  .login-message-content {
     padding: 5px 10px;
     font-size: 12px;
-}
+  }
 
   .cards {
     padding: 30px 0;
