@@ -10,6 +10,7 @@ const deliveryChargesMessage = document.getElementById(
 const totalAmount = document.getElementById("total-amount");
 const urlParams = new URLSearchParams(window.location.search);
 const productId = parseInt(urlParams.get("id")); // Get product ID from URL
+const locationField = document.getElementById("current-location");
 let productName = document.getElementById("product-name");
 let productPrice = document.getElementById("product-unit-price");
 
@@ -67,6 +68,7 @@ let initialValues = {
       perUnitPrice: 0,
     },
   ],
+  ...(locationField.value && { customerCurrentLocation: locationField.value }),
 };
 
 // If selected product exists, update product details
@@ -192,7 +194,58 @@ submitButton.addEventListener("click", (e) => {
     });
   }, 2000);
 
-  setTimeout(() => {
-    window.location.href = "index.html";
-  }, 3000);
+  // setTimeout(() => {
+  //   window.location.href = "index.html";
+  // }, 3000);
 });
+
+// Get user current location
+
+function getCurrentLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else {
+    locationField.value = "Can't access your location";
+  }
+}
+
+function showPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+
+  fetch(
+    `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      const location = data.address;
+      locationField.value = `${
+        location.city || location.town || location.village || "Unknown City"
+      }, ${location.country || "Unknown Country"}`;
+
+      initialValues.customerCurrentLocation = locationField.value;
+    })
+    .catch((error) => {
+      locationField.value = "Unable to fetch location name.";
+    });
+}
+
+function showError(error) {
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+      locationField.value = "User denied the request for GeoLocation.";
+      break;
+
+    case error.POSITION_UNAVAILABLE:
+      locationField.value = "Location information is unavailable.";
+      break;
+
+    case error.UNKNOWN_ERROR:
+      locationField.value = "An unknown error occurred.";
+      break;
+  }
+}
+
+window.onload = function () {
+  getCurrentLocation();
+};
