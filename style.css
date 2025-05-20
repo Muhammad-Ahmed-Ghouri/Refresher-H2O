@@ -158,18 +158,15 @@ body {
   margin: 0 10px;
   border-radius: 3px;
   padding: 12px 20px;
-  color: var(--white-color);
+  color: var(--primary3-color);
   font-size: 14px;
+  text-align: center;
 }
 
 .login-message-content a {
-  color: var(--white-color);
+  color: var(--primary3-color);
   transition: all 0.5s;
   font-weight: 600;
-}
-
-.login-message-content a:hover {
-  color: var(--primary5-color);
 }
 
 .card-section1 {
@@ -527,6 +524,10 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+#current-location{
+  cursor: text;
 }
 
 .form-content2-input-phone-field {
