@@ -456,8 +456,8 @@ body {
 
 .form-content2-box1 {
   display: flex;
-  justify-content: space-evenly;
-  margin: 10px 0;
+  justify-content: space-between;
+  margin: 10px 20px;
 }
 
 .form-content2-field p,
@@ -480,7 +480,7 @@ body {
 }
 
 .form-content2-name-field {
-  width: 50%;
+  width: 55%;
 }
 
 .form-content2-price-field {
@@ -502,8 +502,7 @@ body {
 .form-content2-box2-field {
   display: flex;
   flex-direction: column;
-  width: 93%;
-  margin: 15px auto;
+  margin: 15px 20px;
 }
 
 #delivery-charges-message {
@@ -557,6 +556,7 @@ body {
 .form-content2-box2-button {
   display: flex;
   justify-content: center;
+  margin: 0 20px;
 }
 
 .form-content2-box2-button button {
@@ -567,7 +567,7 @@ body {
   border: none;
   background-color: var(--secondary7-color);
   color: var(--white-color);
-  width: 93%;
+  width: 100%;
   font-size: 17px;
   border-radius: 3px;
   transition: all 0.5s;
@@ -577,8 +577,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 93%;
-  margin: 0 auto;
+  margin: 0 20px;
 }
 
 .form-content2-box2-login-button a {
@@ -800,13 +799,22 @@ body {
   }
 
   .form-content2-field {
-    width: 93%;
-    margin: auto;
+    width: 100%;
+  }
+
+  .form-content2-input-field, .form-content2-box2-field{
+    margin: 15px 14px;
   }
 
   .form-content2-box1 {
     flex-direction: column;
+    margin: 15px 14px;
   }
+
+  .form-content2-box2-button,
+.form-content2-box2-login-button{
+    margin: 0 14px;
+}
 
   #product-name {
     margin-bottom: 20px;
@@ -933,8 +941,7 @@ body {
   }
 
   .form-content2-field {
-    width: 93%;
-    margin: auto;
+    width: 100%;
   }
 
   .form-content2-box1 {
