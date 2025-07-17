@@ -68,8 +68,21 @@ let initialValues = {
       perUnitPrice: 0,
     },
   ],
-  ...(locationField.value && { customerCurrentLocation: locationField.value }),
+  // ...(locationField.value && { customerCurrentLocation: locationField.value }),
 };
+
+// Updating the total amount
+
+function updateTotalAmount(price, deliveryCharges) {
+  const quantityValue = parseInt(quantity.value);
+  if (deliveryCharges > 0) {
+    const total = quantityValue * price + deliveryCharges;
+    totalAmount.textContent = total;
+  } else {
+    const total = quantityValue * price;
+    totalAmount.textContent = total;
+  }
+}
 
 // If selected product exists, update product details
 if (selectedProduct) {
@@ -89,25 +102,13 @@ if (selectedProduct) {
   console.error("Product not found");
 }
 
-// Updating the total amount
-
-function updateTotalAmount(price, deliveryCharges) {
-  const quantityValue = parseInt(quantity.value);
-  if (deliveryCharges > 0) {
-    const total = quantityValue * price + deliveryCharges;
-    totalAmount.textContent = total;
-  } else {
-    const total = quantityValue * price;
-    totalAmount.textContent = total;
-  }
-}
-
 // Form field validation
 
 function checkFields() {
   if (
     customerName.value.length >= 3 &&
     customerMobileNo.value.length === 10 &&
+    customerMobileNo.value.charAt(0) === "3" &&
     customerAddress.value.length >= 10 &&
     quantity.value > 0
   ) {
@@ -212,10 +213,9 @@ submitButton.addEventListener("click", (e) => {
 // function showPosition(position) {
 //   const latitude = position.coords.latitude;
 //   const longitude = position.coords.longitude;
-//   const accuracy = position.coords.accuracy;
 
 //   fetch(
-//     `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}&acc=${accuracy}`
+//     `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`
 //   )
 //     .then((response) => response.json())
 //     .then((data) => {

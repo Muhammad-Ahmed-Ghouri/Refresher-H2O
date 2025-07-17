@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cart - puraspring</title>
-    <link rel="icon" type="image/x-icon" href="./assets/company-logo.jpeg" />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
-  />
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart - puraspring</title>
+  <link rel="icon" type="image/x-icon" href="./assets/company-logo.jpeg" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
   <body>
     <nav class="navbar">
       <div class="navbar-content">
@@ -65,26 +61,26 @@
 
             <div class="form-content2-input-field">
               <label for="name">Customer Name</label>
-              <input type="text" id="name" />
+              <input type="text" id="name" autocomplete="name"/>
             </div>
 
             <div class="form-content2-input-field">
               <label for="phone">Customer Mobile No</label>
               <div class="form-content2-input-phone-field">
                 <p>(+92)</p>
-                <input type="tel" id="phone" placeholder="300XXXXXXX" />
+                <input type="tel" id="phone" placeholder="300XXXXXXX" autocomplete="tel"/>
               </div>
             </div>
 
             <div class="form-content2-input-field">
               <label for="address">Customer Address</label>
-              <input type="text" id="address" />
+              <input type="text" id="address" autocomplete="street-address"/>
             </div>
 
-            <div class="form-content2-input-field">
+            <!-- <div class="form-content2-input-field">
               <label for="address">Customer Current Location</label>
-              <input type="text" id="current-location" disabled/>
-            </div>
+              <input type="text" id="current-location" autocomplete="off"/>
+            </div> -->
 
             <div class="form-content2-box2-field">
               <h6>Total</h6>
@@ -161,5 +157,6 @@
 
     <script src="/form.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
   </body>
 </html>
