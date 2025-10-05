@@ -230,6 +230,7 @@ function ContactForm() {
             <div className={styles.formContent2Box2Button}>
               <button type="submit" disabled={!isSubmitEnabled}>
                 {isLoading && <div className={styles.orderProcess}></div>}
+                }
                 Submit
               </button>
             </div>
