@@ -1,0 +1,154 @@
+.websiteFooter {
+  background-color: #f9f9f9;
+}
+
+.footerBox {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 30px 0 0;
+}
+
+.footerBoxPart2 {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footerBoxPart2Content1,
+.footerBoxPart2Content2,
+.footerBoxPart2Content3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerBoxPart2Content1 p {
+  font-size: 30px;
+  color: var(--primary5-color);
+  font-weight: 500;
+}
+
+.footerBoxPart2Content1 img {
+  height: 90px;
+  margin-right: 15px;
+}
+
+.footerBoxPart2Content2 p,
+.footerBoxPart2Content3 p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerBoxPart2Content2 a,
+.footerBoxPart2Content3 a,
+.footerBoxPart2Content2 p,
+.footerBoxPart2Content3 p {
+  text-decoration: none;
+  color: var(--primary3-color);
+  font-size: 17px;
+}
+
+.footerBoxPart2Content2 img,
+.footerBoxPart2Content3 img {
+  height: 20px;
+  margin: 0 10px 0 3px;
+}
+
+@media screen and (max-width: 600px) {
+  .footerBoxPart2 {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .footerBoxPart2Content1 img {
+    height: 60px;
+  }
+
+  .footerBoxPart2Content1 p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .footerBoxPart2Content1,
+  .footerBoxPart2Content2,
+  .footerBoxPart2Content3 {
+    margin: 20px 5px;
+  }
+
+  .footerBoxPart2Content3 a {
+    text-align: center;
+  }
+
+  .footerBoxPart2Content2 img,
+  .footerBoxPart2Content3 img {
+    height: 16px;
+    margin: 0 3px 0 3px;
+  }
+
+  .footerBoxPart2Content2 a,
+  .footerBoxPart2Content3 a,
+  .footerBoxPart2Content2 p,
+  .footerBoxPart2Content3 p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .footerBoxPart2 {
+    flex-direction: column;
+    max-width: 900px;
+  }
+
+  .footerBoxPart2Content1 p {
+    font-size: 27px;
+  }
+
+  .footerBoxPart2Content1,
+  .footerBoxPart2Content2,
+  .footerBoxPart2Content3 {
+    margin: 25px 0;
+  }
+
+  .footerBoxPart2Content1 img {
+    height: 80px;
+  }
+
+  .footerBoxPart2Content1 h1 {
+    font-size: 27px;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .footerBoxPart2 {
+    justify-content: space-between;
+    max-width: 860px;
+  }
+
+  .footerBoxPart2Content1 img {
+    height: 60px;
+  }
+
+  .footerBoxPart2Content1 p {
+    font-size: 20px;
+  }
+
+  .footerBoxPart2Content2 a,
+  .footerBoxPart2Content3 a,
+  .footerBoxPart2Content2 p,
+  .footerBoxPart2Content3 p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1536px) {
+  .footerBoxPart2Content1 img {
+    height: 70px;
+  }
+
+  .footerBoxPart2Content1 p {
+    font-size: 25px;
+  }
+}

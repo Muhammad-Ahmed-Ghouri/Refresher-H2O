@@ -1,0 +1,111 @@
+.footerBoxPart1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid var(--secondary9-color);
+  padding-bottom: 30px;
+}
+
+.footerBoxPart1 h1 {
+  font-size: 40px;
+  max-width: 1000px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary3-color);
+}
+
+.certificatesCrop {
+  display: none;
+}
+
+.companyCertificates {
+  height: 400px;
+}
+
+@media screen and (max-width: 600px) {
+  .footerBoxPart1 {
+    flex-direction: column;
+  }
+
+  .footerBoxPart1 h1 {
+    max-width: 400px;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .companyCertificates {
+    display: none;
+  }
+
+  .certificatesCropBox {
+    background-color: var(--white-color);
+  }
+
+  .certificatesCropBox img {
+    height: 160px;
+  }
+
+  .certificatesCrop {
+    display: block;
+  }
+
+  .certificatesCrop2 {
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .footerBoxPart1 {
+    flex-direction: column;
+  }
+
+  .footerBoxPart1 h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .companyCertificates {
+    display: none;
+  }
+
+  .certificatesCropBox {
+    background-color: var(--white-color);
+  }
+
+  .certificatesCropBox img {
+    height: 250px;
+  }
+
+  .certificatesCrop {
+    display: block;
+  }
+
+  .certificatesCrop2 {
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .footerBoxPart1 h1 {
+    font-size: 30px;
+    max-width: 800px;
+  }
+
+  .companyCertificates {
+    height: 273px;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1536px) {
+  .footerBoxPart1 h1 {
+    font-size: 35px;
+    margin-right: 10px;
+  }
+
+  .companyCertificates {
+    height: 380px;
+  }
+}

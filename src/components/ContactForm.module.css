@@ -1,0 +1,304 @@
+.shoppingCartSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 75px 30px;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+
+.shoppingCartSectionBackgroundImage {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 950px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.formContent1 h1 {
+  margin-bottom: 15px;
+  font-size: 40px;
+  color: var(--primary3-color);
+  font-weight: lighter;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.shoppingCartSectionForm {
+  height: 800px;
+  width: 100%;
+}
+
+.formContent2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  padding: 25px 0;
+}
+
+.formContent2BackgroundImage {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.formContent2Box1 {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+
+.formContent2Field p,
+.formContent2Box2Field p {
+  background-color: var(--primary6-color);
+  color: var(--white-color);
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+.formContent2Field h6,
+.formContent2 label,
+.formContent2Box2Field h6 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: var(--secondary2-color);
+}
+
+.formContent2NameField {
+  width: 55%;
+}
+
+.formContent2PriceField {
+  width: 40%;
+}
+
+.formContent2Box2Field p {
+  background-color: var(--primary3-color);
+}
+
+.formContent2InputField,
+.formContent2Box2Field {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 20px;
+}
+
+.deliveryChargesMessage {
+  display: block;
+  font-size: 12px;
+  color: var(--secondary4-color);
+  margin: 10px 0 0;
+}
+
+.accountLoginMessage {
+  font-size: 12px;
+  color: var(--secondary4-color);
+}
+
+.formContent2InputField input {
+  background-color: var(--white-color);
+  color: var(--secondary8-color);
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 17px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.formContent2InputPhoneField {
+  display: flex;
+  background-color: var(--white-color);
+  border-radius: 3px;
+  align-items: center;
+}
+
+.formContent2InputPhoneField p {
+  color: var(--secondary8-color);
+  padding-left: 10px;
+  background-color: transparent;
+}
+
+.formContent2InputPhoneField input {
+  color: var(--secondary8-color);
+  width: 90%;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+
+.formContent2InputPhoneField input::placeholder {
+  color: var(--secondary8-color);
+}
+
+.formContent2Box2Button {
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.formContent2Box2Button button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  border: none;
+  background-color: var(--secondary7-color);
+  color: var(--white-color);
+  width: 100%;
+  font-size: 17px;
+  border-radius: 3px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.formContent2Box2Button button:enabled {
+  background-color: #6987ac;
+  cursor: pointer;
+}
+
+.formContent2Box2Button button:enabled:hover {
+  background-color: #354a64;
+}
+
+.formContent2Box2LoginButton {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.formContent2Box2LoginButton a {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 15px 0;
+  text-decoration: none;
+  border: none;
+  background-color: rgb(105, 135, 172);
+  color: var(--white-color);
+  font-size: 17px;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.formContent2Box2LoginButton a:hover {
+  background-color: #354a64;
+}
+
+.orderProcess {
+  display: inline-block;
+  margin-right: 10px;
+  border: 2px solid var(--primary3-color);
+  border-top: 2px solid var(--white-color);
+  border-radius: 20px;
+  height: 17px;
+  width: 17px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .formContent1 h1 {
+    font-size: 30px;
+  }
+
+  .formContent2Field p,
+  .formContent2Box2Field p {
+    font-size: 16px;
+  }
+
+  .formContent2Field h6,
+  .formContent2 label,
+  .formContent2Box2Field h6 {
+    font-size: 13px;
+  }
+
+  .formContent2Field {
+    width: 100%;
+  }
+
+  .formContent2InputField,
+  .formContent2Box2Field {
+    margin: 15px 14px;
+  }
+
+  .formContent2Box1 {
+    flex-direction: column;
+    margin: 15px 14px;
+  }
+
+  .formContent2Box2Button,
+  .formContent2Box2LoginButton {
+    margin: 0 14px;
+  }
+
+  .formContent2NameField {
+    margin-bottom: 20px;
+  }
+
+  .formContent2Box2Button a {
+    padding: 10px 18px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .shoppingCartSection {
+    max-width: 500px;
+  }
+
+  .formContent1 h1 {
+    font-size: 30px;
+  }
+
+  .formContent2Field {
+    width: 100%;
+  }
+
+  .formContent2Box1 {
+    flex-direction: column;
+  }
+
+  .formContent2NameField {
+    margin-bottom: 20px;
+  }
+
+  .formContent2Box2Button a {
+    padding: 10px 15px;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .shoppingCartSection {
+    max-width: 600px;
+  }
+
+  .formContent1 h1 {
+    font-size: 35px;
+  }
+
+  .formContent2Box2Button a {
+    padding: 10px 19px;
+  }
+}

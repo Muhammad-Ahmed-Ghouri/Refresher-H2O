@@ -1,0 +1,35 @@
+.cartHeader {
+  background-color: var(--primary2-color);
+  height: 160px;
+}
+
+.cartHeaderContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.cartHeaderContentHeadings {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--white-color);
+}
+
+@media screen and (max-width: 600px) {
+  .cartHeader {
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .cartHeader {
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .cartHeader {
+    height: 70px;
+  }
+}
